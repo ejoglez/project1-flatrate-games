@@ -64,4 +64,68 @@ document.querySelectorAll("img").forEach(item => {
 })
 
 
+document.addEventListener("DOMContentLoaded", ()=>{
+    const gameUrl="https://www.cheapshark.com/api/1.0/games?ids=9,36,43,59,75,74,80,128"
+    fetch(gameUrl)
+    .then(resp => resp.json() )
+    .then(data=>  {
+        let arrGame= Object.values(data)
+        console.log(arrGame)
+        arrGame.forEach(el=> renderImg(el))
+     }
+        )
+        let gallary=document.getElementById("card-container"); // this is the section where the store is at
+
+        
+        function renderImg(game){
+
+            let cardConatianer= document.createElement("div")
+            cardConatianer.className="card"
+
+        let img=document.createElement("img")
+        img.src=game.info.thumb
+        cardConatianer.appendChild(img)
+        gallary.append(cardConatianer)
+
+
+
+      
+
+        let btnCart=document.createElement('button')
+        btnCart.className=".button-section"
+
+        btnCart.innerText="cart"
+        let btnDetail= document.createElement("button")
+        btnDetail.innerText="detail"
+
+        cardConatianer.appendChild(btnCart)
+        cardConatianer.appendChild(btnDetail)
+
+        btnCart.addEventListener("click",()=>{
+            alert("Howdy\nItem is in the cart")
+        })
+
+        let theDiv=document.createElement("div")
+        cardConatianer.append(theDiv)
+        
+        btnDetail.addEventListener("click", ()=>{
+            
+            //thediv was another tag to grab  to house all the information when clicked
+          
+            
+            
+            theDiv.innerHTML=""
+
+            let nameTile=document.createElement("p")
+            theDiv.innerText=game.info.title
+            theDiv.appendChild(nameTile)
+
+            let thePrice=document.createElement("p")
+            thePrice.innerText=game.cheapestPriceEver.price
+            theDiv.appendChild(thePrice)
+
+
+        })
+    }
+})
 // test.forEach(element => console.log(element));
