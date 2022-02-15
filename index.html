@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
-        <link rel="stylesheet" href="index.css">
-        <title>Flatrate Games</title>
-        <script defer src="index.js"></script>
-    </head>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link rel="stylesheet" href="index.css">
+    <title>Flatrate Games</title>
+    <script defer src="index.js"></script>
+</head>
 
 <body>
     <section id="banner">
@@ -19,7 +19,7 @@
                     <a href="#about"><i class="far fa-id-card"></i></a>
                 </div>
             </div>
-        </div>                                                                               
+        </div>
     </section>
 
     <section id="main-content">
@@ -29,7 +29,7 @@
             </header>
             <div id="product-list">
                 <div id="card-container">
-            
+
                 </div>
             </div>
         </section>
@@ -38,45 +38,108 @@
             <header>
                 <h1>Game Reviews</h1>
             </header>
+            <div class="row">
+                <div class="column">
+
+                    <h1>REVIEWS</h1>
+
+
+
+                    <div class="container">
+                        <div class="post">
+
+                            <form id="new-review">
+
+                                <label for="name">NAME:</label>
+                                <input type="text" name="name" placeholder="Your Name" id="user-name" />
+
+
+
+                                <label for="game">GAME:</label>
+                                <input type="text" name="game" placeholder="Game Name" id="game-name" />
+
+
+                                <label for="new-comment">YOUR REVIEW:</label>
+                                <textarea name="comment" placeholder="describe your experience.."
+                                    id="comment"></textarea>
+
+                                <input type="submit" value="SUBMIT" />
+
+                            </form>
+
+                        </div>
+
+
+
+                        <div class="column">
+                            <div id="recent-reviews">
+                                <br> <br> <br>
+                                <h2>MOST RECENT REVIEWS</h2>
+                                <br> <br> <br>
+                                <p>Kim Kardashian - Skyrim - I love this game! I've spent so much time doing all the
+                                    side quest that I've have 100 hours into the game and I havn't even touch the
+                                    main story yet! I highly recommend </p>
+                                <br> <br>
+
+
+                                <div id="review-panel">
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </section>
 
         <section id="about">
             <h1>About us! Click our faces for more information!</h1>
-        <div id="ul">
-        <ul id="about-us">
-            
-            <li>
-                <h3 class = "names"> Eric Van </h3>
-                <img id="ev-picture" class = "pictures" src="AboutUsPics/21125505_1532294940154732_1754325753808962236_o.jpg" alt="error"> <br>
-                <a class = "links" href="https://github.com/ggclarence" target="_blank" >Github</a><br>
-                <a class = "links" href="https://www.linkedin.com/in/eric-van-71b34a229/" target="_blank" >Linkedin</a>
-            </li>
-            <li>
-                <h3 class = "names"> Eric Gonzalez </h3>
-                <img id="eg-picture" class = "pictures" src="AboutUsPics/T02MD9XTF-U02P859NKNZ-2b8e2ab354eb-512.jpg" alt="error"> <br>
-                <a class = "links" href="https://github.com/ejoglez" target="_blank" >Github</a><br>
-                <a class = "links" href="https://www.linkedin.com/in/ejoglez/" target="_blank" >Linkedin</a>
-            </li>
-            <li>
-                <h3 class = "names"> Ahmed Alsaedi </h3>
-                <img id="ahmed-picture" class = "pictures" src="AboutUsPics/T02MD9XTF-U02T65UV1LJ-8db8dd41e386-512.jpg" alt="error"> <br>
-                <a class = "links" class = "pictures" href="https://github.com/aalsaedi265" target="_blank" >Github</a><br>
-                <a class = "links" href="https://www.linkedin.com/in/ahmed-r-j-alsaedi/" target="_blank" >Linkedin</a>
-            </li>
-            <li>
-                <h3 class = "names"> Nathaly Espinal </h3>
-                <img id="nathaly-picture" class = "pictures" src="AboutUsPics/T02MD9XTF-U02G9ELQQ8P-1505ae46e619-512.jpg" alt="error"> <br>
-                <a class = "links" href="https://github.com/ggclarence" target="_blank" >Github</a><br>
-                <a class = "links" href="https://www.linkedin.com/in/eric-van-71b34a229/" target="_blank" >Linkedin</a>
-            </li>   
-             
-        </ul>
+            <div id="ul">
+                <ul id="about-us">
+
+                    <li>
+                        <h3 class="names"> Eric Van </h3>
+                        <img id="ev-picture" class="pictures"
+                            src="AboutUsPics/21125505_1532294940154732_1754325753808962236_o.jpg" alt="error"> <br>
+                        <a class="links" href="https://github.com/ggclarence" target="_blank">Github</a><br>
+                        <a class="links" href="https://www.linkedin.com/in/eric-van-71b34a229/"
+                            target="_blank">Linkedin</a>
+                    </li>
+                    <li>
+                        <h3 class="names"> Eric Gonzalez </h3>
+                        <img id="eg-picture" class="pictures"
+                            src="AboutUsPics/T02MD9XTF-U02P859NKNZ-2b8e2ab354eb-512.jpg" alt="error"> <br>
+                        <a class="links" href="https://github.com/ejoglez" target="_blank">Github</a><br>
+                        <a class="links" href="https://www.linkedin.com/in/ejoglez/" target="_blank">Linkedin</a>
+                    </li>
+                    <li>
+                        <h3 class="names"> Ahmed Alsaedi </h3>
+                        <img id="ahmed-picture" class="pictures"
+                            src="AboutUsPics/T02MD9XTF-U02T65UV1LJ-8db8dd41e386-512.jpg" alt="error"> <br>
+                        <a class="links" class="pictures" href="https://github.com/aalsaedi265"
+                            target="_blank">Github</a><br>
+                        <a class="links" href="https://www.linkedin.com/in/ahmed-r-j-alsaedi/"
+                            target="_blank">Linkedin</a>
+                    </li>
+                    <li>
+                        <h3 class="names"> Nathaly Espinal </h3>
+                        <img id="nathaly-picture" class="pictures"
+                            src="AboutUsPics/T02MD9XTF-U02G9ELQQ8P-1505ae46e619-512.jpg" alt="error"> <br>
+                        <a class="links" href="https://github.com/ggclarence" target="_blank">Github</a><br>
+                        <a class="links" href="https://www.linkedin.com/in/eric-van-71b34a229/"
+                            target="_blank">Linkedin</a>
+                    </li>
+
+                </ul>
 
         </section>
         <footer id="footer">
 
         </footer>
-    </section>   
-    </body>
+    </section>
+</body>
+
 </html>
