@@ -67,7 +67,7 @@ body{
 }
 
 #about{
-    min-height: 82vh;
+    min-height: 50vh;
 }
 
 #logo{
@@ -180,4 +180,7 @@ a:focus { text-decoration: none; color:rgb(195, 0, 255); }
 a:hover, a:active { text-decoration: none; color:rgb(189, 177, 177) }
 
 #focus {width: 150px;}
+#resetBtn {float: left;}
+
+
 /* ABOUT US CSS */
