@@ -31,7 +31,7 @@ body{
     background-repeat: no-repeat;
     border-bottom-left-radius: 300px 300px;
     min-height: 96vh;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 #nav-wrapper{
@@ -64,10 +64,11 @@ body{
 
 #store, #reviews{
     min-height: 95vh;
+    margin-bottom: 50px;
 }
 
 #about{
-    min-height: 50vh;
+    min-height: 80vh;
 }
 
 #logo{
@@ -83,8 +84,79 @@ body{
     border-bottom-right-radius: 300px 300px;
 }
 
-#reviews h1{
+#reviews form{
     color: white;
+}
+
+#reviews h1{
+    font-size: 60px;
+    font-weight: 200;
+    font-family: monospace;
+    color: white;
+    margin-left: 100px;
+}
+
+#reviews h2{
+    font-weight: 200;
+    font-size: 40px;
+    font-family: monospace;
+    color: white;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#reviews h3{
+    font-size: 40px;
+    padding-bottom: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(167, 11, 11);
+    text-align: center;
+}
+
+#reviews h4{
+    font-size: large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding-bottom: 13px;
+}
+
+#formContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+#formContainer header{
+    font-size: 45px;
+    font-weight: 200;
+    font-family: monospace;
+    color: white;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+#reviewForm{
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+}
+
+#reviewPanel{
+    display: flex;
+    flex-direction: row;
+    min-width: fit-content;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.reviewCard{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    max-width: 300px;
+    max-height: fit-content;
+    padding: 35px;
+    margin: 35px;
+    border-radius: 69px;
 }
 
 
@@ -95,55 +167,46 @@ a {
     padding-left: 1rem;
 }
 
-h1{
-    padding: 1rem;
-    font-size: 2rem;
-}
-
-
 /* content */
-
-#product-list{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    min-width: 80%;
-
+#card-container{
+   display: grid;
+   grid-template-columns: auto auto auto auto;
+   grid-template-rows: auto auto;
+   align-items: center;
+   justify-items: center;
+   justify-content: space-around;
 }
 
-#card-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+#main-content h1{
+    font-size: 50px;
+    font-weight: 200;
+    font-family: monospace;
+    padding: 25px;
+    margin-left: 35px;
 }
 
 .card{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    display: inline-grid;
     background-color: whitesmoke;
-    max-width: auto;
-    max-height: auto;
     border-radius: 15px;
     border: solid black 8px;
-    margin: 40px;
+    margin: 55px;
+    padding: 25px;
+    max-width: fit-content;
+    max-height: fit-content;
     text-align: center;
 }
 
 .card h2{
-    font-size: 1.33rem;
     font-style: italic;
     padding-bottom: 5px;
 }
 
-.card p{
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
-
 .card img{
-    max-width: 180px;
-    border-radius: 40px;
+    justify-self: center;
+    min-width: 200px;
+    min-height: 100px;
+    border-radius: 20px;
     padding: 10px;
 }
 
@@ -151,12 +214,11 @@ h1{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
-    margin: 0.5rem;
 }
 
 .button-cart, .button-info{
-    font-size: 25px;
+    font-size: 15px;
+    font-style: oblique;
 }
 
 #footer{
