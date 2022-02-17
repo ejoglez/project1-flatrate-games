@@ -64,69 +64,83 @@ document.querySelectorAll("img").forEach(item => {
     })
 })
 
+const gameUrl="https://www.cheapshark.com/api/1.0/games?ids=13,36,43,59,75,77,80,123,38,53,99,15,21,25"
 
-document.addEventListener("DOMContentLoaded", ()=>{
-    const gameUrl="https://www.cheapshark.com/api/1.0/games?ids=9,36,43,59,75,74,80,128"
+
+//get data from api
+function getData(){
     fetch(gameUrl)
-    .then(resp => resp.json() )
-    .then(data=>  {
-        let arrGame= Object.values(data)
-        console.log(arrGame)
-        arrGame.forEach(el=> renderImg(el))
-     }
-        )
-        let gallary=document.getElementById("card-container"); // this is the section where the store is at
+    .then(resp => resp.json())
+    .then(data =>  interate(data))
 
-        
-        function renderImg(game){
+}
+getData();
 
-            let cardConatianer= document.createElement("div")
-            cardConatianer.className="card"
+// interate through nested objects and return array of data 
+function interate(nestedObjData){
+    const array = Object.values(nestedObjData)
+    array.forEach(el => createCard(el));
+}
 
-        let img=document.createElement("img")
-        img.src=game.info.thumb
-        cardConatianer.appendChild(img)
-        gallary.append(cardConatianer)
+const cardContainer = document.getElementById('card-container');
 
+//create a card 
+function createCard(game){
+    const div = document.createElement('div');
+    div.className = 'card';
+    const img = document.createElement('img');
+    img.src = game.info.thumb;
 
+    const h2 = document.createElement('h2')
+    h2.innerText = game.info.title;
 
-      
+    const cartBttn = document.createElement('button')
+    cartBttn.innerText = 'ADD TO CART'
+    cartBttn.className = 'button-cart'
 
-        let btnCart=document.createElement('button')
-        btnCart.className=".button-section"
+    const infoBttn = document.createElement('button')
+    infoBttn.innerText = 'MORE INFO';
+    infoBttn.className ='button-info';
 
-        btnCart.innerText="cart"
-        let btnDetail= document.createElement("button")
-        btnDetail.innerText="detail"
+    const bttnSection = document.createElement('div');
+    bttnSection.className = 'button-section';
 
-        cardConatianer.appendChild(btnCart)
-        cardConatianer.appendChild(btnDetail)
+    bttnSection.append(cartBttn, infoBttn)
 
-        btnCart.addEventListener("click",()=>{
-            alert("Howdy\nItem is in the cart")
-        })
+    div.append(img,h2,bttnSection);
 
-        let theDiv=document.createElement("div")
-        cardConatianer.append(theDiv)
-        
-        btnDetail.addEventListener("click", ()=>{
-            
-            //thediv was another tag to grab  to house all the information when clicked
-          
-            
-            
-            theDiv.innerHTML=""
+    cardContainer.append(div)
+}
 
-            let nameTile=document.createElement("p")
-            theDiv.innerText=game.info.title
-            theDiv.appendChild(nameTile)
+//submit form
+const reviewForm = document.getElementById('reviewForm')
 
-            let thePrice=document.createElement("p")
-            thePrice.innerText=game.cheapestPriceEver.price
-            theDiv.appendChild(thePrice)
-
-
-        })
-    }
+//add event listener to form
+reviewForm.addEventListener('submit', (e) =>{
+    e.preventDefault();
+    console.log(e);
+    postComment(e);
+    reviewForm.reset();
 })
-// test.forEach(element => console.log(element));
+
+const reviewPanel = document.getElementById('reviewPanel');
+const commentInput = document.getElementById('game-name');
+
+//add comment to section
+function postComment(event){
+    const div = document.createElement('div');
+    div.className = 'reviewCard';
+
+    const gameName = document.createElement('h3');
+    gameName.innerText = event.target[1].value;
+
+    const name = document.createElement('h4')
+    name.innerText = event.target[0].value;
+
+    const comment = document.createElement('p');
+    comment.innerText = event.target[2].value;
+
+    div.append(gameName, name, comment)
+
+    reviewPanel.appendChild(div)
+}
