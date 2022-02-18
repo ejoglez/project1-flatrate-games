@@ -243,7 +243,7 @@ p{float: right;}
 
 a:visited { text-decoration: none; color:rgb(0, 0, 0); }
 a:hover { text-decoration: none; color:blue; }
-a:focus { text-decoration: none; color:rgb(195, 0, 255); }
+a:focus { text-decoration: none; color:rgba(255, 0, 0, 0.363); }
 a:hover, a:active { text-decoration: none; color:rgb(189, 177, 177) }
 
 #focus {width: 150px;}
@@ -330,3 +330,12 @@ a.github{
 /* ABOUT US CSS */
 
 
+#best{
+    font-size: 80px;
+    color: var(--secondary-background-color);
+}
+
+#hoverText{
+    display: block;
+    float: left;
+}
