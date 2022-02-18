@@ -99,7 +99,7 @@ outPrice.innerText=game.cheapestPriceEver.price
 // crea list itme and append it
         let otherDealsArr=game.deals
         otherDealsArr.forEach(el=>{
-            let gameList=document.createElement("li")
+            let gameList=document.createElement("p")
             gameList.innerText=el.price
             theButnDiv.append(gameList)
         })
