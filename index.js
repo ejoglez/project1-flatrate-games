@@ -83,7 +83,7 @@ function interate(nestedObjData){
 }
 
 const cardContainer = document.getElementById('card-container');
-
+let theButnDiv= document.createElement("div")
 //create a card 
 function createCard(game){
     const div = document.createElement('div');
@@ -107,9 +107,41 @@ function createCard(game){
 
     bttnSection.append(cartBttn, infoBttn)
 
-    div.append(img,h2,bttnSection);
+// this is the cheepest price, and iam appending it under the title
+let outPrice= document.createElement("p")
+outPrice.innerText=game.cheapestPriceEver.price
+
+    div.append(img,h2,outPrice,bttnSection);
 
     cardContainer.append(div)
+
+    cartBttn.addEventListener("click",()=>{
+        alert("Greetings\n Item is in the cart!")
+    
+    })
+    infoBttn.addEventListener("click",()=>{
+
+        theButnDiv.innerHTML=""
+        
+        let gameDes=document.createElement('p')
+
+        
+        gameDes="Other Deals Love"
+
+        theButnDiv.append(gameDes)
+
+        let otherDealsArr=game.deals
+        otherDealsArr.forEach(el=>{
+            let gameList=document.createElement("li")
+            gameList.innerText=el.price
+            theButnDiv.append(gameList)
+        })
+        
+        div.append(theButnDiv)
+        
+    
+
+    })
 }
 
 //submit form
