@@ -338,4 +338,10 @@ a.github{
 #hoverText{
     display: block;
     float: left;
+    padding-top: 125px;
+    padding-left: 225px;
+    font-size: xx-large;
+    font-family: monospace;
+    font-weight: bold;
+    text-align: center;
 }
