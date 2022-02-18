@@ -120,16 +120,17 @@ outPrice.innerText=game.cheapestPriceEver.price
     
     })
     infoBttn.addEventListener("click",()=>{
-
+// clears it after every click
         theButnDiv.innerHTML=""
         
         let gameDes=document.createElement('p')
 
-        
+        // give tile for the other deals
         gameDes="Other Deals Love"
 
         theButnDiv.append(gameDes)
-
+// iterare over the deals
+// crea list itme and append it
         let otherDealsArr=game.deals
         otherDealsArr.forEach(el=>{
             let gameList=document.createElement("li")
