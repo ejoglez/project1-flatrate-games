@@ -158,6 +158,7 @@ reviewForm.addEventListener('submit', (e) =>{
 const reviewPanel = document.getElementById('reviewPanel');
 const commentInput = document.getElementById('game-name');
 
+
 //add comment to section
 function postComment(event){
     const div = document.createElement('div');
@@ -176,3 +177,4 @@ function postComment(event){
 
     reviewPanel.appendChild(div)
 }
+
